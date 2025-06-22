@@ -115,5 +115,5 @@ startup-pitch-platform/
 
 ## Author
 
-**Sahil Rai**
+**Adarsh Sharma**
  
