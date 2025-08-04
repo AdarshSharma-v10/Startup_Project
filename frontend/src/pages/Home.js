@@ -4,14 +4,8 @@ import axios from 'axios';
 import IdeaCard from '../components/IdeaCard';
 import './Home.css';
 
-const Home = () => {
-  const [topIdeas, setTopIdeas] = useState([]);
-  const [allIdeas, setAllIdeas] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-
-  const motivationalQuotes = [
-   "I don’t believe in taking right decisions. I take decisions and then make them right. - Ratan Tata",
+const motivationalQuotes = [
+  "I don’t believe in taking right decisions. I take decisions and then make them right. - Ratan Tata",
   "If you are born poor it's not your mistake, but if you die poor it's your mistake. - Narayana Murthy",
   "An entrepreneur is someone who dares to dream and is determined to make it happen. - Kiran Mazumdar-Shaw",
   "Ideas are easy. Implementation is hard. - Nandan Nilekani",
@@ -21,7 +15,13 @@ const Home = () => {
   "Startups are about finding a scalable and repeatable business model. - Alok Kejriwal",
   "You don’t need a big company to start with. You need a big vision. - Byju Raveendran",
   "If you fully accept the worst that can ever happen in your journey, fear won’t ever be an obstacle. - Naval Ravikant"
-  ];
+];
+
+const Home = () => {
+  const [topIdeas, setTopIdeas] = useState([]);
+  const [allIdeas, setAllIdeas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
 
   useEffect(() => {
     fetchIdeas();
@@ -113,4 +113,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;
