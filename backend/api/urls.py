@@ -2,7 +2,8 @@ from django.urls import path, include
 from rest_framework_nested import routers
 from .views import (
     IdeaViewSet, CommentViewSet, TopIdeasView,
-    UserRegistrationView, UserLoginView, UserLogoutView
+    UserRegistrationView, UserLoginView, UserLogoutView,
+    redirect_to_frontend  # Import the new redirect view
 )
 
 router = routers.DefaultRouter()
@@ -12,10 +13,11 @@ ideas_router = routers.NestedDefaultRouter(router, r'ideas', lookup='idea')
 ideas_router.register(r'comments', CommentViewSet, basename='idea-comments')
 
 urlpatterns = [
+    path('', redirect_to_frontend, name='root-redirect'),  # root URL redirects to frontend
     path('', include(router.urls)),
     path('', include(ideas_router.urls)),
     path('top-ideas/', TopIdeasView.as_view(), name='top-ideas'),
     path('auth/register/', UserRegistrationView.as_view(), name='register'),
     path('auth/login/', UserLoginView.as_view(), name='login'),
     path('auth/logout/', UserLogoutView.as_view(), name='logout'),
-] 
+]
