@@ -10,7 +10,7 @@ from django.shortcuts import redirect
 
 urlpatterns = [
     # Redirect root URL ('/') to your frontend URL
-    path('', lambda request: redirect('https://your-frontend-domain.com/')),  # Replace with your actual frontend URL
+    path('', lambda request: redirect('https://startup-project-frontend.vercel.app/')),  # Replace with your actual frontend URL
     
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
