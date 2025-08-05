@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from django.shortcuts import redirect
 from .models import Idea, Comment, Like
 from .serializers import (
     IdeaSerializer, IdeaCreateSerializer, CommentSerializer, 
@@ -121,4 +122,8 @@ class UserLogoutView(APIView):
     
     def post(self, request):
         logout(request)
-        return Response({'message': 'Successfully logged out'}) 
+        return Response({'message': 'Successfully logged out'})
+
+# New view to redirect root URL requests to your frontend
+def redirect_to_frontend(request):
+    return redirect('https://your-frontend-domain.com/')  # Replace with your actual frontend URL
