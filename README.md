@@ -2,6 +2,11 @@
 
 A platform where users can pitch their startup ideas and others can view, like, and comment on them.
 
+## 🚀 Live Demo
+
+- **Frontend:** [https://startup-project-black.vercel.app/](https://startup-project-black.vercel.app/)
+- **Backend:** [https://startup-project-frontend.vercel.app/](https://startup-project-frontend.vercel.app/)
+
 ## Features
 
 ### 🎯 Core Features
